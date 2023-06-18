@@ -7,7 +7,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-
 public class TestBase {
     /*
        TestBase class'ini bu class'i parent edinecek class'larda
@@ -25,6 +24,7 @@ public class TestBase {
     }
     @After
     public void teardown(){
+
         driver.quit();
     }
 }

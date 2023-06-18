@@ -9,6 +9,18 @@ import utilities.TestBase;
 import java.util.Set;
 
 public class C02_SwitchingWindows extends TestBase {
+
+    /*
+       driver.switchTo().newWindow(). kullanarak actigimiz
+       window'a driver otomatik olarak gecer.
+
+       ANCAKKKKK.....
+       biz newWindow() method'unu kullanmadan
+       bir link tikladigimizda yeni window aciliyorsa
+       driver eski window'da kalir.
+       Yeni window'a driver'i gecirebilmek icin
+       yeni window'un WindowHandleDegeri'ne ihtiyacimiz vardir.
+     */
     @Test
     public void test01(){
         // ● https://the-internet.herokuapp.com/windows adresine gidin.
@@ -30,12 +42,12 @@ public class C02_SwitchingWindows extends TestBase {
         // ● Click Here butonuna basın.
         driver.findElement(By.linkText("Click Here")).click();
 
-        // Bu asamadan itibaren yeni sayfa acildi, artık iki Window var.
+        // 43. satir itibariyla yeni sayfa acildi, artık iki Window var.
 
-        Set<String> WindowHandleDegerleriSet = driver.getWindowHandles();
+        Set<String> WindowHandleDegerleriSeti = driver.getWindowHandles();
         String ikinciWindowHandleDegeri = "";
 
-        for (String eachWhd : WindowHandleDegerleriSet
+        for (String eachWhd : WindowHandleDegerleriSeti
              ) {
             if (!eachWhd.equals(ilkSayfaWindowHandleDegeri)){
                 ikinciWindowHandleDegeri = eachWhd;
