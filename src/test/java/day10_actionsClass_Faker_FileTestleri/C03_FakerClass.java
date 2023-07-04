@@ -39,7 +39,7 @@ public class C03_FakerClass extends TestBase {
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.name().lastName())
                 .sendKeys(Keys.TAB)
-                .sendKeys(email)     // faker.internet().emailAddress() seklinde de calisabilir
+                .sendKeys(email)     // faker.internet().emailAddress() seklinde de calisabilir (bir kez istenirse)
                 .sendKeys(Keys.TAB)
                 .sendKeys(Keys.TAB)
                 .sendKeys(faker.internet().password())
